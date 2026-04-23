@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && Copy-Item docs\\index.html . && Copy-Item docs\\assets . -Recurse -Force",
     "preview": "vite preview"
   },
   "dependencies": {
