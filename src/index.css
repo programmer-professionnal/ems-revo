@@ -700,3 +700,348 @@ footer {
     display: none;
   }
 }
+
+.page-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.page-header p {
+  opacity: 0.9;
+}
+
+.page-header svg {
+  color: var(--primary-red);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.nav-links a.active {
+  border-bottom: 2px solid var(--white);
+}
+
+.features-section {
+  background: var(--white);
+  padding: 4rem 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: var(--gray-100);
+  padding: 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.feature-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-red);
+  font-weight: 500;
+}
+
+.top-drugs-section {
+  margin-bottom: 3rem;
+}
+
+.section-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--gray-700);
+}
+
+.top-drugs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.top-drug-card {
+  display: flex;
+  gap: 1rem;
+  background: var(--white);
+  padding: 1.25rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-red);
+}
+
+.top-drug-number {
+  width: 36px;
+  height: 36px;
+  background: var(--primary-red);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.top-drug-info h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.top-drug-info .drug-dose {
+  font-size: 0.8rem;
+  color: var(--primary-red);
+  font-weight: 500;
+}
+
+.top-drug-info .drug-indication {
+  font-size: 0.8rem;
+  color: var(--gray-600);
+}
+
+.toggle-section {
+  margin-bottom: 2rem;
+}
+
+.toggle-btn {
+  background: var(--primary-red);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.info-box {
+  background: var(--light-red);
+  border-left: 4px solid var(--primary-red);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.info-box h3 {
+  margin-bottom: 1rem;
+  color: var(--dark-red);
+}
+
+.info-box ul {
+  padding-left: 1.5rem;
+}
+
+.info-box li {
+  margin-bottom: 0.5rem;
+  color: var(--gray-700);
+}
+
+.procedure-card {
+  cursor: pointer;
+}
+
+.procedure-card.expanded {
+  border-left-width: 6px;
+}
+
+.procedure-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.sector-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sector-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: var(--primary-red);
+  color: var(--white);
+}
+
+.sector-header h4 {
+  font-size: 1rem;
+}
+
+.sector-info {
+  padding: 1.5rem;
+}
+
+.sector-info p {
+  margin-bottom: 0.5rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.info-item svg {
+  color: var(--primary-red);
+  flex-shrink: 0;
+}
+
+.info-item h4 {
+  margin-bottom: 0.25rem;
+}
+
+.info-item p {
+  color: var(--gray-600);
+}
+
+.contact-section {
+  background: var(--gray-100);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.contact-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.contact-card svg {
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.contact-main {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--gray-900);
+}
+
+.contact-desc {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+
+.emergency-box {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--primary-red);
+  color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.emergency-box h3 {
+  margin-bottom: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--dark-red);
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0;
+  }
+  
+  .nav-links.open {
+    display: flex;
+  }
+  
+  .nav-links li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .page-header h1 {
+    font-size: 1.75rem;
+  }
+}
