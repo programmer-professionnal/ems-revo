@@ -15,6 +15,7 @@ import Operations from './pages/Operations'
 import Contact from './pages/Contact'
 
 function App() {
+  console.log('APP LOADED - Current date:', new Date().toISOString());
   return (
     <Router>
       <Routes>

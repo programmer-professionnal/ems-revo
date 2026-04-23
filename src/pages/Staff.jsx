@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Users, Search, ChevronRight, Award } from 'lucide-react'
 import Layout from '../components/Layout'
 
+console.log('STAFF PAGE LOADED - Lucas Vargas is here!');
+
 const hierarchyData = [
   {
     rank: 'Chief of EMS',
