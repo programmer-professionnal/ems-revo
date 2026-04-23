@@ -31,8 +31,8 @@ export default function Contact() {
             
             <div className="contact-card">
               <Mail size={32} />
-              <h3>Email</h3>
-              <p className="contact-main">ems@revorp.com</p>
+              <h3>Discord</h3>
+              <p className="contact-main">https://discord.gg/JDvmfszMmF</p>
               <p className="contact-desc">Para consultas administrativas</p>
             </div>
             
