@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal - EMS RevoRP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🚑</div>
+        <span>EMS RevoRP</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="farmacologia.html">Farmacología</a></li>
+        <li><a href="procedimientos.html">Procedimientos</a></li>
+        <li><a href="personal.html" class="active">Personal</a></li>
+        <li><a href="operaciones.html">Operaciones</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>👥 Personal EMS</h1>
+    <p>Jerarquía, ranks y miembros del departamento</p>
+  </div>
+
+  <main class="content">
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('jerarquia')">Jerarquía</button>
+      <button class="tab-btn" onclick="showTab('staff')">Personal Activo</button>
+      <button class="tab-btn" onclick="showTab('ranks')">Ranks</button>
+    </div>
+
+    <div id="jerarquia" class="tab-content active">
+      <h2>Estructura Jerárquica</h2>
+      
+      <div class="hierarchy-card">
+        <div class="hierarchy-header">
+          <div class="rank">Chief of EMS</div>
+          <div class="name">Por Asignar</div>
+        </div>
+        <div class="hierarchy-body">
+          <div class="role">Director del Departamento</div>
+          <ul>
+            <li>Gestión general del departamento</li>
+            <li>Toma de decisiones estratégicas</li>
+            <li>Coordinación con otros departamentos</li>
+            <li>Supervisión de todos los sectores</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hierarchy-card">
+        <div class="hierarchy-header">
+          <div class="rank">Assistant Chief</div>
+          <div class="name">Por Asignar</div>
+        </div>
+        <div class="hierarchy-body">
+          <div class="role">Subdirector de EMS</div>
+          <ul>
+            <li>Apoyo al Chief en funciones</li>
+            <li>Gestión de operaciones diarias</li>
+            <li>Supervisión de supervisores</li>
+            <li>Reportes y documentación</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hierarchy-card">
+        <div class="hierarchy-header">
+          <div class="rank">Captain</div>
+          <div class="name">Por Asignar</div>
+        </div>
+        <div class="hierarchy-body">
+          <div class="role">Capitán de Sector</div>
+          <ul>
+            <li>Coordinación de equipos por zona</li>
+            <li>Gestión de emergencias masivas</li>
+            <li>Asignación de recursos</li>
+            <li>Reporte al Assistant Chief</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hierarchy-card" style="border: 2px solid var(--primary-red);">
+        <div class="hierarchy-header" style="background: var(--primary-red);">
+          <div class="rank">Lieutenant (Supervisor)</div>
+          <div class="name">Lucas Vargas</div>
+        </div>
+        <div class="hierarchy-body">
+          <div class="role">Supervisor de Turno</div>
+          <ul>
+            <li>Supervisión de equipos de paramedics</li>
+            <li>Control de calidad en llamadas</li>
+            <li>Capacitación del personal</li>
+            <li>Manejo de incidentes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="staff" class="tab-content">
+      <h2>Personal Activo</h2>
+      
+      <div class="staff-grid">
+        <div class="staff-card" style="border: 2px solid var(--primary-red);">
+          <div class="staff-avatar">LV</div>
+          <div class="name">Lucas Vargas</div>
+          <div class="position">Lieutenant - Supervisor</div>
+          <div class="shift">Turno: 24/7</div>
+          <span class="supervisor-badge">SUPERVISOR</span>
+        </div>
+        
+        <div class="staff-card">
+          <div class="staff-avatar">SM</div>
+          <div class="name">Dr. Sarah Mitchell</div>
+          <div class="position">Medical Director</div>
+          <div class="shift">Turno: 24/7</div>
+        </div>
+        
+        <div class="staff-card">
+          <div class="staff-avatar">JR</div>
+          <div class="name">Cpt. James Rodriguez</div>
+          <div class="position">Captain - Sector 1</div>
+          <div class="shift">Turno: Mañana</div>
+        </div>
+        
+        <div class="staff-card">
+          <div class="staff-avatar">EC</div>
+          <div class="name">Lt. Emily Chen</div>
+          <div class="position">Lieutenant - Sector 2</div>
+          <div class="shift">Turno: Tarde</div>
+        </div>
+        
+        <div class="staff-card">
+          <div class="staff-avatar">MB</div>
+          <div class="name">Sgt. Michael Brown</div>
+          <div class="position">Training Sergeant</div>
+          <div class="shift">Turno: Mañana</div>
+        </div>
+        
+        <div class="staff-card">
+          <div class="staff-avatar">JT</div>
+          <div class="name">Off. Jessica Taylor</div>
+          <div class="position">Senior Paramedic</div>
+          <div class="shift">Turno: Noche</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="ranks" class="tab-content">
+      <h2>Rangos del Departamento</h2>
+      
+      <table class="data-table">
+        <thead>
+          <tr><th>Rango</th><th>Descripción</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>EMT-Basic</strong></td><td>Emergency Medical Technician - Básico. Primer respondiente en escenas de emergencia.</td></tr>
+          <tr><td><strong>EMT-Advanced</strong></td><td>EMT con habilidades avanzadas incluyendo IV y algunas medicaciones.</td></tr>
+          <tr><td><strong>Paramedic</strong></td><td>Nivel más alto de EMT. Realiza intervenciones avanzadas y decide destino del paciente.</td></tr>
+          <tr><td><strong>Sergeant</strong></td><td>Supervisa equipos de campo y maneja incidentes menores.</td></tr>
+          <tr><td><strong>Lieutenant</strong></td><td>Gestiona múltiples unidades y coordina operaciones.</td></tr>
+          <tr><td><strong>Captain</strong></td><td>Comandante de incidente y supervisor de personal.</td></tr>
+          <tr><td><strong>Assistant Chief</strong></td><td>Gestión operativa y administrativa del departamento.</td></tr>
+          <tr><td><strong>Chief</strong></td><td>Director máximo del departamento de EMS.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 EMS RevoRP - Emergency Medical Services</p>
+  </footer>
+
+  <script>
+    function showTab(tabName) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(tabName).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmacología - EMS RevoRP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🚑</div>
+        <span>EMS RevoRP</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="farmacologia.html" class="active">Farmacología</a></li>
+        <li><a href="procedimientos.html">Procedimientos</a></li>
+        <li><a href="personal.html">Personal</a></li>
+        <li><a href="operaciones.html">Operaciones</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>💊 Farmacología</h1>
+    <p>Guía completa de medicamentos para emergencias médicas</p>
+  </div>
+
+  <main class="content">
+    <input type="text" class="search-input" id="searchDrugs" placeholder="Buscar medicamento..." onkeyup="filterDrugs()">
+
+    <h2>🔴 Medicamentos de Urgencia Vital</h2>
+    <p>Los siguientes medicamentos son esenciales para situaciones que amenazan la vida:</p>
+
+    <table class="data-table" id="drugsTable">
+      <thead>
+        <tr>
+          <th>Medicamento</th>
+          <th>Dosis</th>
+          <th>Indicación</th>
+          <th>Notas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Adrenalina</strong></td>
+          <td>1mg IV/IO (1:10000)</td>
+          <td>Paro cardiorrespiratorio, Anafilaxia</td>
+          <td>Primera línea en PCR. Repetir cada 3-5 min.</td>
+        </tr>
+        <tr>
+          <td><strong>Amiodarona</strong></td>
+          <td>300mg IV</td>
+          <td>FV/TV sin pulso</td>
+          <td>Segunda dosis: 150mg. Luego infusión 1mg/min</td>
+        </tr>
+        <tr>
+          <td><strong>Atropina</strong></td>
+          <td>0.5mg IV (máx 3mg)</td>
+          <td>Bradicardia sintomática</td>
+          <td>No útil en infarto inferior</td>
+        </tr>
+        <tr>
+          <td><strong>Naloxona</strong></td>
+          <td>0.4-2mg IV/IN</td>
+          <td>Sobredosis de opioides</td>
+          <td>Titular, efecto dura 30-90 min</td>
+        </tr>
+        <tr>
+          <td><strong>Midazolam</strong></td>
+          <td>2-5mg IV/IM</td>
+          <td>Sedación, Ansiedad, Convulsiones</td>
+          <td>Riesgo de depresión respiratoria</td>
+        </tr>
+        <tr>
+          <td><strong>Suero Fisiológico 0.9%</strong></td>
+          <td>500-2000ml IV</td>
+          <td>Hipovolemia, Shock</td>
+          <td>Primera elección en trauma hemorrágico</td>
+        </tr>
+        <tr>
+          <td><strong>Ringer Lactato</strong></td>
+          <td>500-2000ml IV</td>
+          <td>Reemplazo de volumen, Quemaduras</td>
+          <td>Preferido en quemaduras y acidosis</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>💜 Medicamentos Cardiovasculares</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Medicamento</th>
+          <th>Dosis</th>
+          <th>Indicación</th>
+          <th>Notas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Aspirina (AAS)</strong></td>
+          <td>300mg VO</td>
+          <td>SCA - Síndrome Coronario Agudo</td>
+          <td>Masticar antes de tragar</td>
+        </tr>
+        <tr>
+          <td><strong>Nitroglicerina (NTG)</strong></td>
+          <td>0.4mg SL cada 5min</td>
+          <td>Angina, SCA</td>
+          <td>No usar si PA sist <90</td>
+        </tr>
+        <tr>
+          <td><strong>Metoprolol</strong></td>
+          <td>25-50mg VO o 5mg IV</td>
+          <td>IAM con taquicardia</td>
+          <td>Controlar FC y PA</td>
+        </tr>
+        <tr>
+          <td><strong>Clopidogrel</strong></td>
+          <td>300-600mg VO carga</td>
+          <td>SCA, ICP</td>
+          <td>Doble antiagregación con AAS</td>
+        </tr>
+        <tr>
+          <td><strong>Heparina</strong></td>
+          <td>70-100 U/kg IV</td>
+          <td>IAM con ST elevado</td>
+          <td>Monitorear TTPA cada 6h</td>
+        </tr>
+        <tr>
+          <td><strong>Furosemida</strong></td>
+          <td>20-40mg IV</td>
+          <td>Edema pulmonar, ICC</td>
+          <td>Efecto rápido (5-15 min IV)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>🟢 Analgésicos y Sedantes</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Medicamento</th>
+          <th>Dosis</th>
+          <th>Indicación</th>
+          <th>Notas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Morfina</strong></td>
+          <td>4-8mg IV (titular 1-2mg)</td>
+          <td>Dolor moderado-severo</td>
+          <td>Contraindicada en hipotensión</td>
+        </tr>
+        <tr>
+          <td><strong>Fentanilo</strong></td>
+          <td>25-100mcg IV</td>
+          <td>Dolor severo, sedación</td>
+          <td>100x más potente que morfina</td>
+        </tr>
+        <tr>
+          <td><strong>Ketamina</strong></td>
+          <td>0.1-0.3mg/kg IV</td>
+          <td>Sedación, analgesia, shock</td>
+          <td>Útil en trauma con hipotensión</td>
+        </tr>
+        <tr>
+          <td><strong>Tramadol</strong></td>
+          <td>50-100mg IV/VO</td>
+          <td>Dolor leve-moderado</td>
+          <td>Riesgo de convulsiones</td>
+        </tr>
+        <tr>
+          <td><strong>Ketorolaco</strong></td>
+          <td>15-30mg IV/IM</td>
+          <td>Dolor musculoesquelético</td>
+          <td>No usar en IRA</td>
+        </tr>
+        <tr>
+          <td><strong>Paracetamol</strong></td>
+          <td>1g IV/VO (máx 4g/día)</td>
+          <td>Dolor leve, fiebre</td>
+          <td>Seguro, primera línea para fiebre</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>🛡️ Antidotos y Reversores</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Medicamento</th>
+          <th>Dosis</th>
+          <th>Indicación</th>
+          <th>Notas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Flumazenil</strong></td>
+          <td>0.2mg IV cada 1min (máx 1mg)</td>
+          <td>Sobredosis de benzodiazepinas</td>
+          <td>Riesgo de convulsiones</td>
+        </tr>
+        <tr>
+          <td><strong>N-acetilcisteína (NAC)</strong></td>
+          <td>150mg/kg IV en 1h</td>
+          <td>Sobredosis de paracetamol</td>
+          <td>Administrar antes de 8h</td>
+        </tr>
+        <tr>
+          <td><strong>Pralidoxima</strong></td>
+          <td>1-2g IV en 15-30min</td>
+          <td>Intoxicación organofosforados</td>
+          <td>Con atropina. No en carbamatos</td>
+        </tr>
+        <tr>
+          <td><strong>Hidroxicobalamina</strong></td>
+          <td>5g IV en 15min</td>
+          <td>Intoxicación por cianuro</td>
+          <td>Tratamiento de elección en humo</td>
+        </tr>
+        <tr>
+          <td><strong>Carbón Activado</strong></td>
+          <td>1g/kg VO (máx 50-100g)</td>
+          <td>Intoxicaciones recientes</td>
+          <td>No en cáusticos o hidrocarburos</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <h3>⚠️ Notas Importantes</h3>
+      <ul>
+        <li><strong>Verifica siempre alergias</strong> antes de administrar cualquier medicamento</li>
+        <li><strong>Monitorea signos vitales</strong> durante y después de la administración</li>
+        <li><strong>Consulta protocolos locales</strong> para dosis específicas</li>
+        <li><strong>Documenta toda administración</strong> de medicamentos</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 EMS RevoRP - Emergency Medical Services</p>
+  </footer>
+
+  <script>
+    function filterDrugs() {
+      const input = document.getElementById('searchDrugs');
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById('drugsTable');
+      const rows = table.getElementsByTagName('tr');
+      
+      for (let i = 1; i < rows.length; i++) {
+        const text = rows[i].textContent.toLowerCase();
+        rows[i].style.display = text.includes(filter) ? '' : 'none';
+      }
+    }
+  </script>
+</body>
+</html>

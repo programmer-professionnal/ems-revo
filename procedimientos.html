@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procedimientos - EMS RevoRP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🚑</div>
+        <span>EMS RevoRP</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="farmacologia.html">Farmacología</a></li>
+        <li><a href="procedimientos.html" class="active">Procedimientos</a></li>
+        <li><a href="personal.html">Personal</a></li>
+        <li><a href="operaciones.html">Operaciones</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>🏥 Procedimientos Técnicos</h1>
+    <p>Guías detalladas de procedimientos de emergencia</p>
+  </div>
+
+  <main class="content">
+    <h2>📋 Evaluación del Paciente</h2>
+    
+    <h3>Signos Vitales</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Parámetro</th>
+          <th>Valor Normal Adulto</th>
+          <th>Método</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Presión Arterial</strong></td><td>120/80 mmHg</td><td>Esfigmomanómetro</td></tr>
+        <tr><td><strong>Frecuencia Cardíaca</strong></td><td>60-100 lpm</td><td>Palpación / Auscultación</td></tr>
+        <tr><td><strong>Frecuencia Respiratoria</strong></td><td>12-20 rpm</td><td>Observación</td></tr>
+        <tr><td><strong>Temperatura</strong></td><td>36.5-37.2°C</td><td>Oral / Timpánica</td></tr>
+        <tr><td><strong>Saturación O₂</strong></td><td>95-100%</td><td>Oximetría</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Primary Survey ABCDE</h3>
+    <div class="card">
+      <h3>A - Airway (Vía Aérea)</h3>
+      <p>¿Está la vía aérea permeable? Maniobras: frente-mentón, elevación mandibular. Si no protege: intubación.</p>
+    </div>
+    <div class="card">
+      <h3>B - Breathing (Respiración)</h3>
+      <p>¿Hay respiración efectiva? Ver, oír, sentir 10 segundos. Buscar: neumotórax, hemotórax.</p>
+    </div>
+    <div class="card">
+      <h3>C - Circulation (Circulación)</h3>
+      <p>¿Hay pulso? Control de hemorragias. Signos de shock: palidez, frialdad, sudoración.</p>
+    </div>
+    <div class="card">
+      <h3>D - Disability (Déficit Neurológico)</h3>
+      <p>Glasgow (E, V, M). Pupilas: tamaño, simetría, reacción.</p>
+    </div>
+    <div class="card">
+      <h3>E - Exposure (Exposición)</h3>
+      <p>Exponer completamente al paciente. Buscar lesiones ocultas. Control de hipotermia.</p>
+    </div>
+
+    <h2>🧠 Escala de Glasgow (GCS)</h2>
+    <table class="data-table">
+      <thead>
+        <tr><th>Categoría</th><th>Puntuación</th><th>Respuesta</th></tr>
+      </thead>
+      <tbody>
+        <tr><td rowspan="4"><strong>Ojo (E)</strong></td><td>4</td><td>Espontánea</td></tr>
+        <tr><td>3</td><td>Al estímulo verbal</td></tr>
+        <tr><td>2</td><td>Al estímulo doloroso</td></tr>
+        <tr><td>1</td><td>Ninguna</td></tr>
+        <tr><td rowspan="5"><strong>Verbal (V)</strong></td><td>5</td><td>Orientada</td></tr>
+        <tr><td>4</td><td>Confusa</td></tr>
+        <tr><td>3</td><td>Palabras inapropiadas</td></tr>
+        <tr><td>2</td><td>Sonidos incomprensibles</td></tr>
+        <tr><td>1</td><td>Ninguna</td></tr>
+        <tr><td rowspan="6"><strong>Motor (M)</strong></td><td>6</td><td>Obedece órdenes</td></tr>
+        <tr><td>5</td><td>Localiza el dolor</td></tr>
+        <tr><td>4</td><td>Retirada al dolor</td></tr>
+        <tr><td>3</td><td>Flexión anormal</td></tr>
+        <tr><td>2</td><td>Extensión anormal</td></tr>
+        <tr><td>1</td><td>Ninguna</td></tr>
+      </tbody>
+    </table>
+    <div class="info-box">
+      <h3>Interpretación GCS</h3>
+      <ul>
+        <li><strong>13-15:</strong> Leve</li>
+        <li><strong>9-12:</strong> Moderado</li>
+        <li><strong>≤8:</strong> Grave - requiere intubación</li>
+      </ul>
+    </div>
+
+    <h2>🚨 Triage START</h2>
+    <div class="card">
+      <h3 style="color: #dc2626;">🔴 ROJO - Inmediato</h3>
+      <p>Vía aérea o respiración comprometidas. Shock. Hemorragia severa.</p>
+      <p><strong>Ejemplos:</strong> Obstrucción vía aérea, neumotórax a tensión, quemaduras extensas</p>
+    </div>
+    <div class="card">
+      <h3 style="color: #f59e0b;">🟡 AMARILLO - Diferible</h3>
+      <p>Pacientes que pueden esperar sin riesgo vital inmediato.</p>
+      <p><strong>Ejemplos:</strong> Fracturas, heridas menores, dolor moderado</p>
+    </div>
+    <div class="card">
+      <h3 style="color: #22c55e;">🟢 VERDE - Menor</h3>
+      <p>Pacientes caminando. Lesiones menores ambulatorias.</p>
+      <p><strong>Ejemplos:</strong> Contusiones, esguinces, cefalea leve</p>
+    </div>
+    <div class="card">
+      <h3 style="color: #1f2937;">⚫ NEGRO - Expectante</h3>
+      <p>Lesiones incompatibles con la vida.</p>
+      <p><strong>Ejemplos:</strong> TCE severo, quemaduras >90%, asistolia prolongada</p>
+    </div>
+
+    <h2>❤️ Electrocardiograma (ECG)</h2>
+    <table class="data-table">
+      <thead>
+        <tr><th>Ritmo</th><th>Frecuencia</th><th>Tratamiento</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>RSN</strong></td><td>60-100</td><td>Ninguno</td></tr>
+        <tr><td><strong>Bradicardia sinusal</strong></td><td>&lt;60</td><td>Atropina 0.5mg IV si sintomático</td></tr>
+        <tr><td><strong>TSV</strong></td><td>150-250</td><td>Maniobras vagales, Adenosina 6mg IV</td></tr>
+        <tr><td><strong>FA</strong></td><td>Irregular</td><td>Ritmo si inestable</td></tr>
+        <tr><td><strong>TV</strong></td><td>100-250</td><td>Amiodarona 300mg IV, RCP si sin pulso</td></tr>
+        <tr><td><strong>FV</strong></td><td>-</td><td>Desfibrilación 360J, RCP, Amiodarona</td></tr>
+        <tr><td><strong>Asistolia</strong></td><td>0</td><td>RCP, Epinefrina 1mg</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>© 2024 EMS RevoRP - Emergency Medical Services</p>
+  </footer>
+</body>
+</html>
