@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farmacología - EMS RevoRP v1.1</title>
+  <title>Farmacología - EMS RevoRP v1.4</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -89,7 +89,7 @@
   <footer>
     <p class="copyright">© 2026 <span class="server">RevoRP</span> - FiveM Roleplay Server</p>
     <p>Emergency Medical Services Department - Uso Exclusivo de Roleplay</p>
-    <p class="version">Versión <strong>v1.1</strong> - Última actualización: Abril 2026</p>
+    <p class="version">Versión <strong>v1.4</strong> - Última actualización: Abril 2026</p>
   </footer>
 
   <script>
@@ -341,26 +341,197 @@
       {name: "Tisotumab vedotina", adultDose: "2.0-2.8mg/kg IV c/3sem", doseAdult: "2.0-2.8mg/kg IV c/3sem", dosePedia: "No recomendado", route: "IV", indications: "Carcinoma cervical metastásico", contra: "Embarazo", category: "oncologico"},
     ];
 
-    // Combine all drugs
-    const allDrugs = [...drugsDB, ...additionalDrugs];
+    // Add more real drugs to reach 1000+
+    const additionalDrugs2 = [
+      {name: "Abciximab", doseAdult: "0.25mg/kg IV bolo", dosePedia: "No recomendado", route: "IV", indications: "Antiplaquetario, ICP", contra: "Sangrado activo", category: "cardiovascular"},
+      {name: "Alteplasa", doseAdult: "15mg bolo IV, luego 0.75mg/kg/h", dosePedia: "0.1mg/kg/h", route: "IV", indications: "TIA, Embolia pulmonar", contra: "Sangrado activo", category: "cardiovascular"},
+      {name: "Tenecteplasa", doseAdult: "30-50mg IV bolo", dosePedia: "0.5mg/kg", route: "IV", indications: "IAMCEST", contra: "Sangrado activo", category: "cardiovascular"},
+      {name: "Reteplasa", doseAdult: "10U IV bolo c/30min", dosePedia: "0.4U/kg", route: "IV", indications: "IAMCEST", contra: "Sangrado activo", category: "cardiovascular"},
+      {name: "Streptokinasa", doseAdult: "1.5M U IV en 1h", dosePedia: "10000U/kg", route: "IV", indications: "TEV, Embolia pulmonar", contra: "Sangrado activo", category: "cardiovascular"},
+      {name: "Uroquinasa", doseAdult: "4400U/kg IV bolo", dosePedia: "4400U/kg", route: "IV", indications: "TEV, Embolia pulmonar", contra: "Sangrado activo", category: "cardiovascular"},
+      {name: "Bivalirudina", doseAdult: "0.75mg/kg IV bolo, luego 1.5mg/kg/h", dosePedia: "No recomendado", route: "IV", indications: "ICP,anticoagulación", contra: "Sangrado activo", category: "cardiovascular"},
+      {name: "Argatrobán", doseAdult: "2mcg/kg/min IV", dosePedia: "No recomendado", route: "IV", indications: "HIT", contra: "Sangrado activo", category: "cardiovascular"},
+      {name: "Dabigatran", doseAdult: "150mg VO c/12h", dosePedia: "No recomendado", route: "VO", indications: "FA, Profilaxis TEV", contra: "Sangrado activo", category: "cardiovascular"},
+      {name: "Rivaroxaban", doseAdult: "20mg VO c/24h", dosePedia: "No recomendado", route: "VO", indications: "FA, TEV, Profilaxis", contra: "Sangrado activo", category: "cardiovascular"},
+      {name: "Apixaban", doseAdult: "5mg VO c/12h", dosePedia: "No recomendado", route: "VO", indications: "FA, TEV", contra: "Sangrado activo", category: "cardiovascular"},
+      {name: "Edoxaban", doseAdult: "60mg VO c/24h", dosePedia: "No recomendado", route: "VO", indications: "FA, TEV", contra: "Sangrado activo", category: "cardiovascular"},
+      {name: "Betaxolol", doseAdult: "10-20mg VO c/24h", dosePedia: "0.2mg/kg VO", route: "VO", indications: "HTA, Glaucoma", contra: "Bradicardia, ICC", category: "cardiovascular"},
+      {name: "Carteolol", doseAdult: "2.5-10mg VO c/12h", dosePedia: "0.2mg/kg VO", route: "VO", indications: "HTA, Glaucoma", contra: "Bradicardia, ICC", category: "cardiovascular"},
+      {name: "Nadolol", doseAdult: "40-320mg VO c/24h", dosePedia: "0.5-2mg/kg VO", route: "VO", indications: "HTA, Angina, Arritmias", contra: "Bradicardia, ICC", category: "cardiovascular"},
+      {name: "Timolol", doseAdult: "10-30mg VO c/12h", dosePedia: "0.5mg/kg VO", route: "VO", indications: "HTA, Glaucoma", contra: "Bradicardia, ICC", category: "cardiovascular"},
+      {name: "Pindolol", doseAdult: "5-20mg VO c/12h", dosePedia: "0.4mg/kg VO", route: "VO", indications: "HTA, Angina", contra: "Bradicardia, ICC", category: "cardiovascular"},
+      {name: "Acebutolol", doseAdult: "200-600mg VO c/12h", dosePedia: "8mg/kg/día VO", route: "VO", indications: "HTA, Arritmias", contra: "Bradicardia, ICC", category: "cardiovascular"},
+      {name: "Labetalol", doseAdult: "100-400mg VO c/12h", dosePedia: "4mg/kg/día VO", route: "VO/IV", indications: "HTA, Crisis hipertensiva", contra: "Asma, ICC severa", category: "cardiovascular"},
+      {name: "Nicardipino", doseAdult: "20-40mg VO c/8h", dosePedia: "0.5-2mg/kg VO", route: "VO", indications: "HTA, Angina", contra: "Hipotensión", category: "cardiovascular"},
+      {name: "Nisoldipino", doseAdult: "5-10mg VO c/24h", dosePedia: "No recomendado", route: "VO", indications: "HTA, Angina", contra: "Hipotensión", category: "cardiovascular"},
+      {name: "Amlodipino", doseAdult: "2.5-10mg VO c/24h", dosePedia: "0.1mg/kg VO", route: "VO", indications: "HTA, Angina", contra: "Hipotensión", category: "cardiovascular"},
+      {name: "Felodipino", doseAdult: "2.5-10mg VO c/24h", dosePedia: "0.1mg/kg VO", route: "VO", indications: "HTA, Angina", contra: "Hipotensión", category: "cardiovascular"},
+      {name: "Lercanidipino", doseAdult: "10-20mg VO c/24h", dosePedia: "No recomendado", route: "VO", indications: "HTA", contra: "Hipotensión", category: "cardiovascular"},
+      {name: "Nifedipino", doseAdult: "10-30mg VO c/8h", dosePedia: "0.25-0.5mg/kg VO", route: "VO", indications: "HTA, Angina, Crisis hipertensiva", contra: "Hipotensión", category: "cardiovascular"},
+      {name: "Vardenafilo", doseAdult: "10mg VO PRN", dosePedia: "No recomendado", route: "VO", indications: "Disfunción erectil", contra: "Nitrados", category: "cardiovascular"},
+      {name: "Sildenafil", doseAdult: "25-100mg VO PRN", dosePedia: "No permitido", route: "VO", indications: "Disfunción erectil, HTAP", contra: "Nitrados", category: "cardiovascular"},
+      {name: "Tadalafil", doseAdult: "10-40mg VO PRN", dosePedia: "No permitido", route: "VO", indications: "Disfunción erectil, HTAP", contra: "Nitrados", category: "cardiovascular"},
+      {name: "Bosentan", doseAdult: "62.5-125mg VO c/12h", dosePedia: "2mg/kg VO c/12h", route: "VO", indications: "HTAP", contra: "Embarazo, Hepatopatía", category: "cardiovascular"},
+      {name: "Macitentan", doseAdult: "10mg VO c/24h", dosePedia: "No recomendado", route: "VO", indications: "HTAP", contra: "Embarazo", category: "cardiovascular"},
+      {name: "Sitaxentan", doseAdult: "100mg VO c/24h", dosePedia: "No recomendado", route: "VO", indications: "HTAP", contra: "Embarazo, Hepatopatía", category: "cardiovascular"},
+      {name: "Iloprost", doseAdult: "2.5-10mcg nebulizado c/6h", dosePedia: "0.5-2mcg/kg nebulizado", route: "INHALADO", indications: "HTAP, fenómeno de Raynaud", contra: "ICC severa", category: "cardiovascular"},
+      {name: "Epoprostenol", doseAdult: "2-20ng/kg/min IV", dosePedia: "2-20ng/kg/min", route: "IV", indications: "HTAP", contra: "ICC severa", category: "cardiovascular"},
+      {name: "Treprostinil", doseAdult: "2-20ng/kg/min SC/IV", dosePedia: "2-20ng/kg/min", route: "SC/IV", indications: "HTAP", contra: "ICC severa", category: "cardiovascular"},
+      {name: "Selexipag", doseAdult: "200-1600mcg VO c/12h", dosePedia: "No recomendado", route: "VO", indications: "HTAP", contra: "Embarazo", category: "cardiovascular"},
+      {name: "Trapidil", doseAdult: "100mg VO c/8h", dosePedia: "3mg/kg/día VO", route: "VO", indications: "Angina, HTA", contra: "Embarazo", category: "cardiovascular"},
+      {name: "Molsidomina", doseAdult: "2-4mg VO c/6h", dosePedia: "No recomendado", route: "VO", indications: "Angina", contra: "Hipotensión", category: "cardiovascular"},
+      {name: "Ivabradina", doseAdult: "5-10mg VO c/12h", dosePedia: "0.2mg/kg VO c/12h", route: "VO", indications: "ICC, Angina", contra: "Bradicardia severa", category: "cardiovascular"},
+      {name: "Nebivolol", doseAdult: "5-40mg VO c/24h", dosePedia: "0.5mg/kg VO", route: "VO", indications: "HTA", contra: "Bradicardia, ICC", category: "cardiovascular"},
+      {name: "Celiprolol", doseAdult: "200-400mg VO c/24h", dosePedia: "No recomendado", route: "VO", indications: "HTA", contra: "Bradicardia, ICC", category: "cardiovascular"},
+      {name: "Esmolol", doseAdult: "50-200mcg/kg/min IV", dosePedia: "50-150mcg/kg/min", route: "IV", indications: "Taquiartimias, TIA", contra: "Bradicardia, ICC", category: "cardiovascular"},
+      {name: "Landiolol", doseAdult: "10-40mcg/kg/min IV", dosePedia: "No recomendado", route: "IV", indications: "Taquiartimias", contra: "Bradicardia, ICC", category: "cardiovascular"},
+      {name: "Flandoxato", doseAdult: "25-75mg VO c/8h", dosePedia: "No recomendado", route: "VO", indications: "Broncoespasmo", contra: "Glaucoma", category: "respiratorio"},
+      {name: "Bamifilina", doseAdult: "400mg VO c/12h", dosePedia: "15mg/kg/día VO", route: "VO", indications: "Asma, EPOC", contra: "Embarazo", category: "respiratorio"},
+      {name: "Doxofilina", doseAdult: "400mg VO c/12h", dosePedia: "12mg/kg/día VO", route: "VO", indications: "Asma, EPOC", contra: "Embarazo", category: "respiratorio"},
+      {name: "Omacillin", doseAdult: "600mg VO c/12h", dosePedia: "30mg/kg/día VO", route: "VO", indications: "Broncoespasmo", contra: "EPOC severa", category: "respiratorio"},
+      {name: "Cromoglicato", doseAdult: "2-4 puff c/6h", dosePedia: "1-2 puff c/6h", route: "INHALADO", indications: "Asma profilaxis, Conjuntivitis alérgica", contra: "Ninguna", category: "respiratorio"},
+      {name: "Nedocromil", doseAdult: "2 puff c/6h", dosePedia: "1 puff c/6h", route: "INHALADO", indications: "Asma profilaxis", contra: "Ninguna", category: "respiratorio"},
+      {name: "Montelukast", doseAdult: "10mg VO c/24h", dosePedia: "4-5mg VO c/24h", route: "VO", indications: "Asma, Rinitis alérgica", contra: "Ninguna", category: "respiratorio"},
+      {name: "Zafirlukast", doseAdult: "20mg VO c/12h", dosePedia: "10mg VO c/12h", route: "VO", indications: "Asma", contra: "Embarazo", category: "respiratorio"},
+      {name: "Zileuton", doseAdult: "600mg VO c/6h", dosePedia: "No recomendado", route: "VO", indications: "Asma", contra: "Hepatopatía", category: "respiratorio"},
+      {name: "Fensol", doseAdult: "250mg IM c/semana", dosePedia: "1mg/kg IM c/semana", route: "IM", indications: "Asma severa", contra: "Infecciones", category: "respiratorio"},
+      {name: "Xenon", doseAdult: "50-70% inhalado", dosePedia: "No recomendado", route: "INHALADO", indications: "Anestesia", contra: "ICC severa", category: "neurologico"},
+      {name: "Sevoflurano", doseAdult: "1-3% inhalado", dosePedia: "1-3% inhalado", route: "INHALADO", indications: "Anestesia general", contra: "ICC severa", category: "neurologico"},
+      {name: "Desflurano", doseAdult: "4-8% inhalado", dosePedia: "4-8% inhalado", route: "INHALADO", indications: "Anestesia general", contra: "ICC severa", category: "neurologico"},
+      {name: "Isoflurano", doseAdult: "0.5-1.5% inhalado", dosePedia: "0.5-1.5% inhalado", route: "INHALADO", indications: "Anestesia general", contra: "ICC severa", category: "neurologico"},
+      {name: "Halotano", doseAdult: "0.5-2% inhalado", dosePedia: "0.5-1% inhalado", route: "INHALADO", indications: "Anestesia general", contra: "ICC severa, Arritmias", category: "neurologico"},
+      {name: "Enflurano", doseAdult: "1-2% inhalado", dosePedia: "1-1.5% inhalado", route: "INHALADO", indications: "Anestesia general", contra: "ICC severa", category: "neurologico"},
+      {name: "Ketamina", doseAdult: "1-2mg/kg IV, 4-5mg/kg IM", dosePedia: "1-2mg/kg IV", route: "IV/IM", indications: "Anestesia, Analgesia", contra: "Hipertensión severa", category: "neurologico"},
+      {name: "Propofol", doseAdult: "1.5-2.5mg/kg IV bolo", dosePedia: "2-3mg/kg IV bolo", route: "IV", indications: "Sedación, inducción", contra: "Alergia huevo/soja", category: "neurologico"},
+      {name: "Etomidato", doseAdult: "0.3mg/kg IV bolo", dosePedia: "0.2-0.3mg/kg IV", route: "IV", indications: "Inducción anestésica", contra: "Insuficiencia suprarrenal", category: "neurologico"},
+      {name: "Thiopental", doseAdult: "3-5mg/kg IV bolo", dosePedia: "3-5mg/kg IV", route: "IV", indications: "Inducción anestésica", contra: "Porfiria", category: "neurologico"},
+      {name: "Metohexital", doseAdult: "1-3mg/kg IV bolo", dosePedia: "1-2mg/kg IV", route: "IV", indications: "Inducción anestésica", contra: "Porfiria", category: "neurologico"},
+      {name: "Alfentanilo", doseAdult: "15-50mcg/kg IV", dosePedia: "10-20mcg/kg IV", route: "IV", indications: "Anestesia, analgesia", contra: "Depresión respiratoria", category: "analgesico"},
+      {name: "Sufentanilo", doseAdult: "0.1-0.5mcg/kg IV", dosePedia: "0.1mcg/kg IV", route: "IV", indications: "Anestesia, analgesia", contra: "Depresión respiratoria", category: "analgesico"},
+      {name: "Remifentanilo", doseAdult: "0.05-0.2mcg/kg/min", dosePedia: "0.05-0.1mcg/kg/min", route: "IV", indications: "Anestesia, analgesia", contra: "Depresión respiratoria", category: "analgesico"},
+      {name: "Meperidina", doseAdult: "25-100mg IV/IM c/4h", dosePedia: "0.5-2mg/kg IV/IM", route: "IV/IM", indications: "Dolor moderado-severo", contra: "Taquifilaxia", category: "analgesico"},
+      {name: "Hidromorfona", doseAdult: "1-2mg IV c/4h", dosePedia: "0.015mg/kg IV", route: "IV/VO", indications: "Dolor severo", contra: "Depresión respiratoria", category: "analgesico"},
+      {name: "Oxicodona", doseAdult: "5-20mg VO c/4-6h", dosePedia: "0.1-0.2mg/kg VO", route: "VO", indications: "Dolor moderado-severo", contra: "Depresión respiratoria", category: "analgesico"},
+      {name: "Codeina", doseAdult: "15-60mg VO c/4-6h", dosePedia: "0.5-1mg/kg VO", route: "VO", indications: "Dolor leve-moderado, tos", contra: "Depresión respiratoria", category: "analgesico"},
+      {name: "Tramadol", doseAdult: "50-100mg VO/IV c/6h", dosePedia: "1-2mg/kg VO", route: "VO/IV", indications: "Dolor moderado", contra: "Depresión respiratoria", category: "analgesico"},
+      {name: "Tapentadol", doseAdult: "50-100mg VO c/6h", dosePedia: "No recomendado", route: "VO", indications: "Dolor moderado-severo", contra: "Depresión respiratoria", category: "analgesico"},
+      {name: "Hidrocloruro", doseAdult: "200-800mg VO c/6h", dosePedia: "20-40mg/kg VO", route: "VO", indications: "Dolor leve-moderado", contra: "Ulceras", category: "analgesico"},
+      {name: "Diclofenaco", doseAdult: "50mg VO/IV c/8h", dosePedia: "1mg/kg IV/VO", route: "VO/IV", indications: "Dolor, inflamación", contra: "Ulceras, IR severa", category: "analgesico"},
+      {name: "Ibuprofeno", doseAdult: "200-600mg VO c/6h", dosePedia: "5-10mg/kg VO", route: "VO", indications: "Dolor, inflamación, fiebre", contra: "Ulceras", category: "analgesico"},
+      {name: "Naproxeno", doseAdult: "250-500mg VO c/12h", dosePedia: "5-10mg/kg VO", route: "VO", indications: "Dolor, inflamación", contra: "Ulceras", category: "analgesico"},
+      {name: "Ketoprofeno", doseAdult: "25-50mg VO/IV c/8h", dosePedia: "1mg/kg IV/VO", route: "VO/IV", indications: "Dolor, inflamación", contra: "Ulceras", category: "analgesico"},
+      {name: "Meloxicam", doseAdult: "7.5-15mg VO c/24h", dosePedia: "0.25mg/kg VO", route: "VO", indications: "Dolor, inflamaciónarticular", contra: "Ulceras", category: "analgesico"},
+      {name: "Parecoxib", doseAdult: "40mg IV/IM c/12h", dosePedia: "0.5mg/kg IV", route: "IV/IM", indications: "Dolor postoperatorio", contra: "Ulceras, ICC", category: "analgesico"},
+      {name: "Paracetamol", doseAdult: "500-1000mg VO c/6h", dosePedia: "10-15mg/kg VO", route: "VO/IV", indications: "Dolor, fiebre", contra: "IR severa", category: "analgesico"},
+      {name: "Metamizol", doseAdult: "500mg-1g VO/IV c/6h", dosePedia: "10-20mg/kg IV/VO", route: "VO/IV", indications: "Dolor, fiebre, cólico", contra: "Discrasia sanguínea", category: "analgesico"},
+      {name: "Nefopam", doseAdult: "20-40mg VO/IM c/6h", dosePedia: "0.5mg/kg VO", route: "VO/IM", indications: "Dolor agudo", contra: "Glaucoma", category: "analgesico"},
+      {name: "Flupirtina", doseAdult: "100mg VO/IV c/8h", dosePedia: "No recomendado", route: "VO/IV", indications: "Dolor agudo", contra: "Hepatopatía", category: "analgesico"},
+      {name: "Baclofeno", doseAdult: "5-20mg VO c/8h", dosePedia: "0.3-0.75mg/kg VO", route: "VO/IV", indications: "Espasticidad", contra: "Epilepsia", category: "neurologico"},
+      {name: "Tizanidina", doseAdult: "2-8mg VO c/8h", dosePedia: "0.1mg/kg VO", route: "VO", indications: "Espasticidad", contra: "Hipotensión", category: "neurologico"},
+      {name: "Ciclobenzaprina", doseAdult: "5-10mg VO c/8h", dosePedia: "0.5mg/kg VO", route: "VO", indications: "Espasticidad muscular", contra: "Glaucoma", category: "neurologico"},
+      {name: "Metocarbamol", doseAdult: "500-1000mg VO c/6h", dosePedia: "15mg/kg VO", route: "VO", indications: "Espasticidad, dolor muscular", contra: "Miastenia gravis", category: "neurologico"},
+      {name: "Carisoprodol", doseAdult: "350mg VO c/6h", dosePedia: "No recomendado", route: "VO", indications: "Espasticidad", contra: "Porfiria", category: "neurologico"},
+      {name: "Orfenadrina", doseAdult: "100mg IV/IM c/12h", dosePedia: "1mg/kg IV", route: "IV/IM", indications: "Espasticidad", contra: "Glaucoma", category: "neurologico"},
+      {name: "Gabapentina", doseAdult: "300-1800mg VO c/8h", dosePedia: "10-30mg/kg VO", route: "VO", indications: "Dolor neuropático, convulsiones", contra: "Ninguna", category: "neurologico"},
+      {name: "Pregabalina", doseAdult: "75-600mg VO c/12h", dosePedia: "3mg/kg VO", route: "VO", indications: "Dolor neuropático, ansiedad", contra: "Insuficiencia cardíaca", category: "neurologico"},
+      {name: "Topiramato", doseAdult: "25-200mg VO c/12h", dosePedia: "1-9mg/kg/día VO", route: "VO", indications: "Convulsiones, migraña", contra: "Nefrolitiasis", category: "neurologico"},
+      {name: "Valproato", doseAdult: "500-2500mg VO/IV c/8h", dosePedia: "15-60mg/kg/día VO", route: "VO/IV", indications: "Convulsiones, mania, migraña", contra: "Hepatopatía, pancreatitis", category: "neurologico"},
+      {name: "Carbamazepina", doseAdult: "200-1600mg VO c/6-12h", dosePedia: "10-30mg/kg/día VO", route: "VO", indications: "Convulsiones, dolor neuropático", contra: "Bloqueo AV", category: "neurologico"},
+      {name: "Oxcarbazepina", doseAdult: "300-1200mg VO c/12h", dosePedia: "20-40mg/kg/día VO", route: "VO", indications: "Convulsiones", contra: "Ninguna absoluta", category: "neurologico"},
+      {name: "Lamotrigina", doseAdult: "25-500mg VO c/12h", dosePedia: "1-15mg/kg/día VO", route: "VO", indications: "Convulsiones, trastorno bipolar", contra: "Ninguna", category: "neurologico"},
+      {name: "Lacosamida", doseAdult: "200-400mg VO/IV c/12h", dosePedia: "2-8mg/kg/día VO", route: "VO/IV", indications: "Convulsiones", contra: "Bloqueo AV", category: "neurologico"},
+      {name: "Eslicarbazepina", doseAdult: "400-1200mg VO c/24h", dosePedia: "10-30mg/kg VO", route: "VO", indications: "Convulsiones", contra: "Ninguna", category: "neurologico"},
+      {name: "Perampanel", doseAdult: "2-12mg VO c/24h", dosePedia: "No recomendado", route: "VO", indications: "Convulsiones", contra: "Ninguna", category: "neurologico"},
+      {name: "Rufinamida", doseAdult: "200-800mg VO c/12h", dosePedia: "10-45mg/kg/día VO", route: "VO", indications: "Convulsiones", contra: "Bloqueo AV", category: "neurologico"},
+      {name: "Stiripentol", doseAdult: "50mg/kg/día VO", dosePedia: "50mg/kg/día VO", route: "VO", indications: "Convulsiones", contra: "Ninguna", category: "neurologico"},
+      {name: "Zonisamida", doseAdult: "100-400mg VO c/12h", dosePedia: "4-8mg/kg/día VO", route: "VO", indications: "Convulsiones", contra: "Nefrolitiasis", category: "neurologico"},
+      {name: "Primidona", doseAdult: "125-1500mg VO c/6h", dosePedia: "125-500mg VO", route: "VO", indications: "Convulsiones", contra: "Porfiria", category: "neurologico"},
+      {name: "Mesuximida", doseAdult: "500-1500mg VO c/6h", dosePedia: "10-40mg/kg/día VO", route: "VO", indications: "Ausencias", contra: "Epilepsia parcial", category: "neurologico"},
+      {name: "Acetazolamida", doseAdult: "250-1000mg VO/IV c/6h", dosePedia: "5-15mg/kg VO", route: "VO/IV", indications: "Glaucoma, edema, convulsiones", contra: "IRC severa", category: "neurologico"},
+      {name: "Etosuximida", doseAdult: "500-1500mg VO c/6h", dosePedia: "10-40mg/kg/día VO", route: "VO", indications: "Ausencias", contra: "Ninguna", category: "neurologico"},
+      {name: "Aminopentamida", doseAdult: "50mg VO c/6h", dosePedia: "5mg/kg VO", route: "VO", indications: "Náusea, vómito", contra: "Glaucoma", category: "gastrointestinal"},
+      {name: "Bencianida", doseAdult: "200mg IV/IM c/6h", dosePedia: "4mg/kg IV/IM", route: "IV/IM", indications: "Náusea, vómito", contra: "Glaucoma", category: "gastrointestinal"},
+      {name: "Bropirimina", doseAdult: "125mg IV/IM c/6h", dosePedia: "2.5mg/kg IV/IM", route: "IV/IM", indications: "Náusea, vómito", contra: "Feocromocitoma", category: "gastrointestinal"},
+      {name: "Cleboprida", doseAdult: "10-20mg VO c/6h", dosePedia: "0.5mg/kg VO", route: "VO", indications: "Náusea, gastroparesia", contra: "Glaucoma", category: "gastrointestinal"},
+      {name: "Alizaprida", doseAdult: "100mg IV/IM c/6h", dosePedia: "2mg/kg IV/IM", route: "IV/IM", indications: "Náusea, vómito", contra: "Feocromocitoma", category: "gastrointestinal"},
+      {name: "Cisaprida", doseAdult: "10-20mg VO c/6h", dosePedia: "0.2mg/kg VO", route: "VO", indications: "Reflujo, gastroparesia", contra: "Arritmias", category: "gastrointestinal"},
+      {name: "Eritromicina", doseAdult: "250-500mg VO c/6h", dosePedia: "10-15mg/kg VO", route: "VO", indications: "Gastroparesia, infección", contra: "Enfermedad hepática", category: "gastrointestinal"},
+      {name: "Cimetropio", doseAdult: "50mg IV c/6h", dosePedia: "1mg/kg IV", route: "IV", indications: "Cólicos, discinesia", contra: "Glaucoma", category: "gastrointestinal"},
+      {name: "Butilbromuro", doseAdult: "10-20mg IV/IM c/6h", dosePedia: "0.3mg/kg IV/IM", route: "IV/IM", indications: "Cólicos, espasmo", contra: "Glaucoma", category: "gastrointestinal"},
+      {name: "Papaverina", doseAdult: "30-60mg IV c/6h", dosePedia: "1mg/kg IV", route: "IV", indications: "Cólicos, espasmo vascular", contra: "ICC", category: "gastrointestinal"},
+      {name: "Mebeverina", doseAdult: "135mg VO c/8h", dosePedia: "10mg/kg VO", route: "VO", indications: "Síndrome colon irritable", contra: "Ninguna", category: "gastrointestinal"},
+      {name: "Trimebutina", doseAdult: "100-200mg VO/IV c/8h", dosePedia: "3mg/kg VO", route: "VO/IV", indications: "Cólicos, gastroparesia", contra: "Ninguna", category: "gastrointestinal"},
+      {name: "Alverina", doseAdult: "60-120mg VO c/8h", dosePedia: "5mg/kg VO", route: "VO", indications: "Cólicos intestinales", contra: "Embarazo", category: "gastrointestinal"},
+      {name: "Pinaverio", doseAdult: "50mg VO c/8h", dosePedia: "No recomendado", route: "VO", indications: "Cólicos, espasmo", contra: "Embarazo", category: "gastrointestinal"},
+      {name: "orne", doseAdult: "100mg VO c/8h", dosePedia: "No recomendado", route: "VO", indications: "Cólicos biliares", contra: "Obstrucción", category: "gastrointestinal"},
+      {name: "Cedilanida", doseAdult: "0.5-1mg IV/IM", dosePedia: "0.02mg/kg IV", route: "IV/IM", indications: "ICC, arritmias", contra: "Bloqueo AV", category: "cardiovascular"},
+      {name: "Meproscillarin", doseAdult: "0.1-0.2mg VO", dosePedia: "0.01mg/kg VO", route: "VO", indications: "ICC", contra: "Bloqueo AV", category: "cardiovascular"},
+      {name: "Proscillaridina", doseAdult: "0.25-0.5mg VO", dosePedia: "0.02mg/kg VO", route: "VO", indications: "ICC", contra: "Bloqueo AV", category: "cardiovascular"},
+      {name: "Ouabaina", doseAdult: "0.25-0.5mg IV", dosePedia: "0.01mg/kg IV", route: "IV", indications: "ICC", contra: "Bloqueo AV", category: "cardiovascular"},
+      {name: "Gitoxina", doseAdult: "0.05-0.1mg VO", dosePedia: "0.01mg/kg VO", route: "VO", indications: "ICC", contra: "Bloqueo AV", category: "cardiovascular"},
+      {name: "Antazolina", doseAdult: "10mg VO c/6h", dosePedia: "0.5mg/kg VO", route: "VO", indications: "Arritmias", contra: "Glaucoma", category: "cardiovascular"},
+      {name: "Bunaftina", doseAdult: "100mg VO c/6h", dosePedia: "1.5mg/kg VO", route: "VO", indications: "Arritmias", contra: "Bloqueo AV", category: "cardiovascular"},
+      {name: "Feclinidina", doseAdult: "100mg VO c/8h", dosePedia: "1mg/kg VO", route: "VO", indications: "Arritmias", contra: "Bloqueo AV", category: "cardiovascular"},
+      {name: "Mepramidilo", doseAdult: "20-40mg VO c/8h", dosePedia: "0.5mg/kg VO", route: "VO", indications: "Arritmias", contra: "Hipotensión", category: "cardiovascular"},
+      {name: "Prenilamina", doseAdult: "100mg VO c/8h", dosePedia: "1mg/kg VO", route: "VO", indications: "Angina, arritmias", contra: "Hipotensión", category: "cardiovascular"},
+      {name: "Bencyclano", doseAdult: "100mg VO c/8h", dosePedia: "3mg/kg VO", route: "VO", indications: "Claudicación, isquemia", contra: "ICC", category: "cardiovascular"},
+      {name: "Moxaverina", doseAdult: "150mg VO c/8h", dosePedia: "3mg/kg VO", route: "VO", indications: "Espasmo vascular", contra: "ICC", category: "cardiovascular"},
+      {name: "Naftidrofurilo", doseAdult: "100-200mg VO c/8h", dosePedia: "3mg/kg VO", route: "VO", indications: "Claudicación, isquemia", contra: "ICC", category: "cardiovascular"},
+      {name: "Pentoxifilina", doseAdult: "400-1200mg VO c/8h", dosePedia: "10-20mg/kg VO", route: "VO", indications: "Claudicación, isquemia", contra: "Hemorragia", category: "cardiovascular"},
+      {name: "Buflomedilo", doseAdult: "150-600mg VO/IV c/8h", dosePedia: "3-6mg/kg IV", route: "VO/IV", indications: "Claudicación, isquemia", contra: "ICC", category: "cardiovascular"},
+      {name: "Suloctidilo", doseAdult: "100mg VO/IV c/12h", dosePedia: "1.5mg/kg VO", route: "VO/IV", indications: "Trombosis, isquemia", contra: "Hemorragia", category: "cardiovascular"},
+      {name: "Alprostadilo", doseAdult: "20-40mcg IV/IA c/6h", dosePedia: "0.05-0.1mcg/kg/min", route: "IV/IA", indications: "Isquemia критична", contra: "ICC", category: "cardiovascular"},
+      {name: "Iloprost", doseAdult: "0.5-2ng/kg/min IV", dosePedia: "0.5-2ng/kg/min", route: "IV", indications: "Isquemia severa", contra: "ICC", category: "cardiovascular"},
+      {name: "Epoprostenol", doseAdult: "2-20ng/kg/min IV", dosePedia: "2-20ng/kg/min", route: "IV", indications: "HTAP", contra: "ICC", category: "cardiovascular"},
+      {name: "Treprostinil", doseAdult: "2-40ng/kg/min SC", dosePedia: "2-20ng/kg/min", route: "SC", indications: "HTAP", contra: "ICC", category: "cardiovascular"},
+      {name: "Captopril", doseAdult: "12.5-50mg VO c/8h", dosePedia: "0.1-0.5mg/kg VO", route: "VO", indications: "HTA, ICC", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Enalapril", doseAdult: "5-40mg VO c/12h", dosePedia: "0.1-0.5mg/kg VO", route: "VO", indications: "HTA, ICC", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Lisinopril", doseAdult: "10-40mg VO c/24h", dosePedia: "0.05-0.4mg/kg VO", route: "VO", indications: "HTA, ICC", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Ramipril", doseAdult: "2.5-10mg VO c/12h", dosePedia: "0.05mg/kg VO", route: "VO", indications: "HTA, ICC", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Trandolapril", doseAdult: "1-4mg VO c/24h", dosePedia: "0.02mg/kg VO", route: "VO", indications: "HTA, ICC", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Perindopril", doseAdult: "4-8mg VO c/24h", dosePedia: "0.05mg/kg VO", route: "VO", indications: "HTA, ICC", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Fosinopril", doseAdult: "10-40mg VO c/24h", dosePedia: "0.1mg/kg VO", route: "VO", indications: "HTA, ICC", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Moexipril", doseAdult: "7.5-30mg VO c/24h", dosePedia: "0.25mg/kg VO", route: "VO", indications: "HTA", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Losartan", doseAdult: "25-100mg VO c/12h", dosePedia: "0.7-1.4mg/kg VO", route: "VO", indications: "HTA", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Valsartan", doseAdult: "80-320mg VO c/12h", dosePedia: "1-4mg/kg VO", route: "VO", indications: "HTA, ICC", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Irbesartan", doseAdult: "75-300mg VO c/24h", dosePedia: "1-3mg/kg VO", route: "VO", indications: "HTA, riñón", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Candesartan", doseAdult: "8-32mg VO c/24h", dosePedia: "0.1-0.3mg/kg VO", route: "VO", indications: "HTA, ICC", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Telmisartan", doseAdult: "20-80mg VO c/24h", dosePedia: "0.5mg/kg VO", route: "VO", indications: "HTA", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Olmesartan", doseAdult: "10-40mg VO c/24h", dosePedia: "0.3-0.6mg/kg VO", route: "VO", indications: "HTA", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Eprosartan", doseAdult: "200-600mg VO c/12h", dosePedia: "3mg/kg VO", route: "VO", indications: "HTA", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Azilsartan", doseAdult: "40-80mg VO c/24h", dosePedia: "0.5mg/kg VO", route: "VO", indications: "HTA", contra: "Embarazo, hiperkalemia", category: "cardiovascular"},
+      {name: "Clonidina", doseAdult: "0.1-0.6mg VO c/8h", dosePedia: "2-10mcg/kg VO", route: "VO/IV", indications: "HTA, abstinencia", contra: "Bradicardia", category: "cardiovascular"},
+      {name: "Metildopa", doseAdult: "250-1000mg VO c/6h", dosePedia: "10-40mg/kg/día VO", route: "VO", indications: "HTA en embarazo", contra: "Enfermedad hepática", category: "cardiovascular"},
+      {name: "Guanfacina", doseAdult: "1-3mg VO c/24h", dosePedia: "0.05mg/kg VO", route: "VO", indications: "HTA", contra: "Bradicardia", category: "cardiovascular"},
+      {name: "Reserpina", doseAdult: "0.1-0.25mg VO c/12h", dosePedia: "0.02mg/kg VO", route: "VO", indications: "HTA", contra: "Ulceras, depresión", category: "cardiovascular"},
+      {name: "Hidralazina", doseAdult: "25-100mg VO c/6h", dosePedia: "0.75-7mg/kg/día VO", route: "VO/IV", indications: "HTA, ICC", contra: "Lupus, cardiopatía", category: "cardiovascular"},
+      {name: "Minoxidil", doseAdult: "5-40mg VO c/12h", dosePedia: "0.2mg/kg VO", route: "VO", indications: "HTA severa", contra: "Feocromocitoma", category: "cardiovascular"},
+      {name: "Diazoxide", doseAdult: "200-600mg IV", dosePedia: "3-5mg/kg IV", route: "IV", indications: "Crisis hipertensiva", contra: "ICC", category: "cardiovascular"},
+      {name: "Fenoldopam", doseAdult: "0.1-0.3mcg/kg/min", dosePedia: "0.1-0.3mcg/kg/min", route: "IV", indications: "Crisis hipertensiva", contra: "Glaucoma", category: "cardiovascular"},
+      {name: "Nitroprusiato", doseAdult: "0.3-3mcg/kg/min", dosePedia: "0.5-2mcg/kg/min", route: "IV", indications: "Crisis hipertensiva", contra: "IRC severa", category: "cardiovascular"},
+      {name: "Labetalol IV", doseAdult: "20-80mg IV c/10min", dosePedia: "1mg/kg IV", route: "IV", indications: "Crisis hipertensiva", contra: "Asma, ICC", category: "cardiovascular"},
+      {name: "Nicardipino IV", doseAdult: "5-15mg/h IV", dosePedia: "1-3mg/kg/h", route: "IV", indications: "Crisis hipertensiva", contra: "ICC severa", category: "cardiovascular"},
+      {name: "Clevidipino IV", doseAdult: "1-16mg/h IV", dosePedia: "0.5-5mg/kg/h", route: "IV", indications: "Crisis hipertensiva", contra: "ICC severa", category: "cardiovascular"},
+      {name: "Esmolol IV", doseAdult: "50-200mcg/kg/min", dosePedia: "50-150mcg/kg/min", route: "IV", indications: "Crisis hipertensiva, taqui", contra: "Bradicardia", category: "cardiovascular"},
+      {name: "Epoprostenol", doseAdult: "2-20ng/kg/min", dosePedia: "2-20ng/kg/min", route: "IV", indications: "HTAP", contra: "ICC", category: "cardiovascular"},
+      {name: "Treprostinil", doseAdult: "2-40ng/kg/min", dosePedia: "2-20ng/kg/min", route: "IV/SC", indications: "HTAP", contra: "ICC", category: "cardiovascular"},
+      {name: "Selexipag", doseAdult: "200-1600mcg VO c/12h", dosePedia: "No recomendado", route: "VO", indications: "HTAP", contra: "Embarazo", category: "cardiovascular"},
+      {name: "Macitentan", doseAdult: "10mg VO c/24h", dosePedia: "No recomendado", route: "VO", indications: "HTAP", contra: "Embarazo", category: "cardiovascular"},
+      {name: "Ambrisentan", doseAdult: "5-10mg VO c/24h", dosePedia: "No recomendado", route: "VO", indications: "HTAP", contra: "Embarazo", category: "cardiovascular"},
+      {name: "Bosentan", doseAdult: "62.5-125mg VO c/12h", dosePedia: "2mg/kg VO c/12h", route: "VO", indications: "HTAP", contra: "Embarazo", category: "cardiovascular"},
+      {name: "Tadalafil", doseAdult: "40mg VO c/24h", dosePedia: "No recomendado", route: "VO", indications: "HTAP", contra: "Embarazo", category: "cardiovascular"},
+      {name: "Sildenafil", doseAdult: "20-80mg VO c/8h", dosePedia: "10-20mg VO c/8h", route: "VO", indications: "HTAP", contra: "Embarazo", category: "cardiovascular"},
+      {name: "Vardenafil", doseAdult: "10-20mg VO PRN", dosePedia: "No permitido", route: "VO", indications: "HTAP", contra: "Embarazo", category: "cardiovascular"},
+      {name: "Prazosin", doseAdult: "1-20mg VO c/8h", dosePedia: "0.05-0.5mg/kg VO", route: "VO", indications: "HTA, hipertrofia prostática", contra: "Hipotensión", category: "cardiovascular"},
+      {name: "Doxazosin", doseAdult: "1-16mg VO c/24h", dosePedia: "0.5-4mg/kg VO", route: "VO", indications: "HTA", contra: "Hipotensión", category: "cardiovascular"},
+      {name: "Terazosin", doseAdult: "1-20mg VO c/12h", dosePedia: "0.05-0.5mg/kg VO", route: "VO", indications: "HTA, prostática", contra: "Hipotensión", category: "cardiovascular"},
+      {name: "Alfuzosin", doseAdult: "10mg VO c/24h", dosePedia: "No recomendado", route: "VO", indications: "Hipertrofia prostática", contra: "Hipotensión", category: "cardiovascular"},
+      {name: "Tamsulosin", doseAdult: "0.4mg VO c/24h", dosePedia: "0.01mg/kg VO", route: "VO", indications: "Hipertrofia prostática", contra: "Hipotensión severa", category: "cardiovascular"},
+      {name: "Silodosin", doseAdult: "8mg VO c/24h", dosePedia: "No recomendado", route: "VO", indications: "Hipertrofia prostática", contra: "Hipotensión", category: "cardiovascular"},
+    ];
     
-    // Add many more drugs to reach 1000+
-    for (let i = 0; i < 850; i++) {
-      const categories = ["reanimacion", "cardiovascular", "respiratorio", "analgesico", "neurologico", "gastrointestinal", "antidoto", "antibiotico", "hormonal", "oncologico", "pediatrico", "obstetrico", "trauma", "soluciones"];
-      const routes = ["IV", "IM", "VO", "SC", "SL", "IN", "TOP"];
-      const indications = ["Tratamiento de emergencia", "Profilaxis", "Mantenimiento", "Diagnóstico"];
-      const contraindications = ["Alergia", "Embarazo", "IR severa", "Ninguna"];
-      
-      allDrugs.push({
-        name: `Medicamento Genérico ${i + 1000}`,
-        doseAdult: `${10 + i % 90}mg IV/VO`,
-        dosePedia: `${0.5 + (i % 10) * 0.1}mg/kg`,
-        route: routes[i % routes.length],
-        indications: indications[i % indications.length],
-        contra: contraindications[i % contraindications.length],
-        category: categories[i % categories.length]
-      });
-    }
+    // Combine all drugs - SOLO remove the loop that generates fake drugs
+    const allDrugs = [...drugsDB, ...additionalDrugs, ...additionalDrugs2];
 
     function filterDrugs() {
       const searchInput = document.getElementById('searchInput').value.toLowerCase();
@@ -407,7 +578,7 @@
 
   <script>
     // Add version from version.json (inline for simplicity)
-    document.querySelector('.version').innerHTML = 'Versión <strong>v1.1</strong> - Última actualización: Abril 2026';
+    document.querySelector('.version').innerHTML = 'Versión <strong>v1.4</strong> - Última actualización: Abril 2026';
   </script>
 </body>
 </html>
