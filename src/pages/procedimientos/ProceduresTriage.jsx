@@ -89,7 +89,7 @@ export default function ProceduresTriage() {
                 <ul>
                   <li>Si no respira: Abrir vía aérea (maniobra frente-mentón)</li>
                   <li>Si aún no respira: <span className="black">NEGRO</span></li>
-                  <li>Si respira >30/min: <span className="red">ROJO</span></li>
+                  <li>Si respira {'>30'}/min: <span className="red">ROJO</span></li>
                 </ul>
               </div>
               

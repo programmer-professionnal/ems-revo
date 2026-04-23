@@ -126,11 +126,11 @@ export default function OperationsSectors() {
         <div className="info-box">
           <h3><AlertCircle size={20} /> Protocolos de Transporte</h3>
           <ul>
-            <li><strong>Distancia <5km:</strong> Transporte por tierra siempre que sea posible</li>
+            <li><strong>Distancia {'<5km'}:</strong> Transporte por tierra siempre que sea posible</li>
             <li><strong>Distancia 5-20km:</strong> Evaluar según estado del paciente y tráfico</li>
-            <li><strong>Distancia >20km o zona rural:</strong> Considerar helicóptero si disponible</li>
+            <li><strong>Distancia {'>20km'} o zona rural:</strong> Considerar helicóptero si disponible</li>
             <li><strong>Trauma severo:</strong> Transportar al centro de trauma más cercano</li>
-            <li><strong>SCA:</strong> Transportar al centro con hemodinamia si <90min</li>
+            <li><strong>SCA:</strong> Transportar al centro con hemodinamia si {'<90min'}</li>
           </ul>
         </div>
 

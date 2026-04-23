@@ -178,9 +178,9 @@ export default function PharmacologyCardio() {
           <h3><AlertCircle size={20} /> Protocolos SCA</h3>
           <ul>
             <li><strong>AAS 300mg</strong> + <strong>Clopidogrel 300-600mg</strong> en todo SCA</li>
-            <li><strong>NTG 0.4mg SL</strong> si PA sistólica >90 y no contraindicado</li>
+            <li><strong>NTG 0.4mg SL</strong> si PA sistólica {'>90'} y no contraindicado</li>
             <li><strong>Heparina</strong> según protocolo local</li>
-            <li><strong>Metoprolol</strong> si HR >60 y PA sistólica >100</li>
+            <li><strong>Metoprolol</strong> si HR {'>60'} y PA sistólica {'>100'}</li>
             <li><strong>Morfina</strong> 4-8mg IV si dolor persistente</li>
           </ul>
         </div>

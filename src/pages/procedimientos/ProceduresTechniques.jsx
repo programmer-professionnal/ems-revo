@@ -84,7 +84,7 @@ const techniques = [
       'NO retirar casco excepto si obstruct vía aérea',
       'Manual: tracción axial mientras llega collarín',
       'Medir talla de collarín: ángulo mandibular a hombro',
-      'Aplicar collarín cervical (rigido o multivac)",
+      'Aplicar collarín cervical (rigido o multivac)',
       'Colocar manos a ambos lados de cabeza manteniendo neutral alignment',
       'Mover al paciente en bloque (log roll)',
       'Asegurar a tabla espinal con straps',
