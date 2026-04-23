@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operaciones - EMS RevoRP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🚑</div>
+        <span>EMS RevoRP</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="farmacologia.html">Farmacología</a></li>
+        <li><a href="procedimientos.html">Procedimientos</a></li>
+        <li><a href="personal.html">Personal</a></li>
+        <li><a href="operaciones.html" class="active">Operaciones</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>📡 Operaciones EMS</h1>
+    <p>Protocolos operativos y procedimientos de coordinación</p>
+  </div>
+
+  <main class="content">
+    <h2>📞 Tipos de Llamadas de Emergencia</h2>
+    
+    <div class="card">
+      <h3 style="color: #dc2626;">ME1 - Emergencia Médica</h3>
+      <p>Paciente crítico con compromiso vital inmediato.</p>
+      <p><strong>Respuesta:</strong> Prioridad máxima, máximo recurso disponible</p>
+      <p><strong>Ejemplos:</strong> PCR, Shock, Dificultad respiratoria severa, IAM</p>
+    </div>
+    
+    <div class="card">
+      <h3 style="color: #f59e0b;">ME2 - Emergencia Urgente</h3>
+      <p>Situación que requiere atención inmediata pero no inmediata amenaza vital.</p>
+      <p><strong>Respuesta:</strong> Prioridad alta, ambulancia con paramédico</p>
+      <p><strong>Ejemplos:</strong> Dolor torácico, Trauma moderado, ACV</p>
+    </div>
+    
+    <div class="card">
+      <h3 style="color: #22c55e;">MU1 - Urgencia Médica</h3>
+      <p>Situación que requiere atención médica pero puede esperar.</p>
+      <p><strong>Respuesta:</strong> Prioridad media, transporte cuando disponible</p>
+      <p><strong>Ejemplos:</strong> Fracturas simples, Heridas menores</p>
+    </div>
+
+    <h2>📻 Protocolos de Radio</h2>
+    <table class="data-table">
+      <thead>
+        <tr><th>Código</th><th>Descripción</th><th>Acción</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>MAYDAY</strong></td><td>Vida del operador en peligro</td><td>Todas las unidades responden de inmediato</td></tr>
+        <tr><td><strong>PRIORIDAD</strong></td><td>Situación crítica</td><td>Despacho inmediato</td></tr>
+        <tr><td><strong>URGENTE</strong></td><td>Info que requiere atención inmediata</td><td>Interrumpir otras transmisiones</td></tr>
+        <tr><td><strong>ROUTINE</strong></td><td>Comunicación estándar</td><td>Respuesta en orden de llegada</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🗺️ Sectores de Cobertura</h2>
+    <table class="data-table">
+      <thead>
+        <tr><th>Sector</th><th>Descripción</th><th>Tiempo Respuesta</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>A1</strong></td><td>Centro Urbano Norte</td><td>3-5 min</td></tr>
+        <tr><td><strong>A2</strong></td><td>Centro Urbano Sur</td><td>4-6 min</td></tr>
+        <tr><td><strong>B1</strong></td><td>Zona Industrial</td><td>5-8 min</td></tr>
+        <tr><td><strong>B2</strong></td><td>Barrios Periféricos</td><td>6-10 min</td></tr>
+        <tr><td><strong>C1-C2</strong></td><td>Carreteras</td><td>8-15 min</td></tr>
+        <tr><td><strong>D1-D2</strong></td><td>Zonas Rurales/Montaña</td><td>15-30 min</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🚨 Códigos 10</h2>
+    
+    <h3>Códigos de Estado</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Código</th><th>Estado</th><th>Descripción</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>10-0</strong></td><td>Precaución</td><td>Precaución</td></tr>
+        <tr><td><strong>10-1</strong></td><td>Señal débil</td><td>Señal débil</td></tr>
+        <tr><td><strong>10-2</strong></td><td>Señal buena</td><td>Señal buena</td></tr>
+        <tr><td><strong>10-3</strong></td><td>Silencio en radio</td><td>Silencio en radio</td></tr>
+        <tr><td><strong>10-4</strong></td><td>Afirmativo / recibido</td><td>Afirmativo / recibido</td></tr>
+        <tr><td><strong>10-5</strong></td><td>Transmitir mensaje</td><td>Transmitir mensaje</td></tr>
+        <tr><td><strong>10-6</strong></td><td>Ocupado</td><td>Ocupado</td></tr>
+        <tr><td><strong>10-7</strong></td><td>Fuera de servicio</td><td>Fuera de servicio</td></tr>
+        <tr><td><strong>10-8</strong></td><td>En servicio</td><td>En servicio</td></tr>
+        <tr><td><strong>10-9</strong></td><td>Repetir mensaje</td><td>Repetir mensaje</td></tr>
+        <tr><td><strong>10-10</strong></td><td>Pelea en progreso</td><td>Pelea en progreso</td></tr>
+        <tr><td><strong>10-11</strong></td><td>Persona sospechosa</td><td>Persona sospechosa</td></tr>
+        <tr><td><strong>10-12</strong></td><td>Visitantes presentes</td><td>Visitantes presentes</td></tr>
+        <tr><td><strong>10-13</strong></td><td>Oficial necesita ayuda</td><td>Oficial necesita ayuda</td></tr>
+        <tr><td><strong>10-14</strong></td><td>Escolta</td><td>Escolta</td></tr>
+        <tr><td><strong>10-15</strong></td><td>Traslado de paciente</td><td>Traslado de paciente</td></tr>
+        <tr><td><strong>10-16</strong></td><td>Recoger paciente</td><td>Recoger paciente</td></tr>
+        <tr><td><strong>10-17</strong></td><td>En ruta</td><td>En ruta</td></tr>
+        <tr><td><strong>10-18</strong></td><td>Urgente / prioridad alta</td><td>Urgente / prioridad alta</td></tr>
+        <tr><td><strong>10-19</strong></td><td>Regresar a base</td><td>Regresar a base</td></tr>
+        <tr><td><strong>10-20</strong></td><td>Ubicación</td><td>Ubicación</td></tr>
+        <tr><td><strong>10-21</strong></td><td>Llamar por teléfono</td><td>Llamar por teléfono</td></tr>
+        <tr><td><strong>10-22</strong></td><td>Cancelar</td><td>Cancelar</td></tr>
+        <tr><td><strong>10-23</strong></td><td>En escena</td><td>En escena</td></tr>
+        <tr><td><strong>10-24</strong></td><td>Asignación completada</td><td>Asignación completada</td></tr>
+        <tr><td><strong>10-25</strong></td><td>Reunirse con unidad</td><td>Reunirse con unidad</td></tr>
+        <tr><td><strong>10-26</strong></td><td>ETA</td><td>Tiempo estimado de llegada</td></tr>
+        <tr><td><strong>10-27</strong></td><td>Información del paciente</td><td>Información del paciente</td></tr>
+        <tr><td><strong>10-28</strong></td><td>Verificación de datos</td><td>Verificación de datos</td></tr>
+        <tr><td><strong>10-29</strong></td><td>Comprobación</td><td>Comprobación (sin alertas)</td></tr>
+        <tr><td><strong>10-30</strong></td><td>Situación peligrosa</td><td>Situación peligrosa</td></tr>
+        <tr><td><strong>10-31</strong></td><td>Delito en progreso</td><td>Delito en progreso</td></tr>
+        <tr><td><strong>10-32</strong></td><td>Solicitar unidades adicionales</td><td>Solicitar unidades adicionales</td></tr>
+        <tr><td><strong>10-33</strong></td><td>Emergencia en radio</td><td>Emergencia en radio</td></tr>
+        <tr><td><strong>10-34</strong></td><td>Disturbio</td><td>Disturbio</td></tr>
+        <tr><td><strong>10-35</strong></td><td>Incendio</td><td>Incendio</td></tr>
+        <tr><td><strong>10-36</strong></td><td>Hora actual</td><td>Hora actual</td></tr>
+        <tr><td><strong>10-37</strong></td><td>Vehículo sospechoso</td><td>Vehículo sospechoso</td></tr>
+        <tr><td><strong>10-38</strong></td><td>Parada de tráfico</td><td>Parada de tráfico</td></tr>
+        <tr><td><strong>10-39</strong></td><td>Uso de luces y sirena</td><td>Uso de luces y sirena</td></tr>
+        <tr><td><strong>10-40</strong></td><td>Situación tranquila</td><td>Situación tranquila</td></tr>
+        <tr><td><strong>10-41</strong></td><td>Inicio de turno</td><td>Inicio de turno</td></tr>
+        <tr><td><strong>10-42</strong></td><td>Fin de turno</td><td>Fin de turno</td></tr>
+        <tr><td><strong>10-43</strong></td><td>Esperando asignación</td><td>Esperando asignación</td></tr>
+        <tr><td><strong>10-44</strong></td><td>Paciente fallecido</td><td>Paciente fallecido</td></tr>
+        <tr><td><strong>10-45</strong></td><td>Paciente grave</td><td>Paciente grave</td></tr>
+        <tr><td><strong>10-46</strong></td><td>Paciente estable</td><td>Paciente estable</td></tr>
+        <tr><td><strong>10-47</strong></td><td>Transporte requerido</td><td>Transporte requerido</td></tr>
+        <tr><td><strong>10-48</strong></td><td>Solicitar ambulancia</td><td>Solicitar ambulancia</td></tr>
+        <tr><td><strong>10-49</strong></td><td>Llegada al hospital</td><td>Llegada al hospital</td></tr>
+        <tr><td><strong>10-50</strong></td><td>Accidente de tráfico</td><td>Accidente de tráfico</td></tr>
+        <tr><td><strong>10-51</strong></td><td>Solicitar grúa</td><td>Solicitar grúa</td></tr>
+        <tr><td><strong>10-52</strong></td><td>Solicitar bomberos</td><td>Solicitar bomberos</td></tr>
+        <tr><td><strong>10-53</strong></td><td>Persona atrapada</td><td>Persona atrapada</td></tr>
+        <tr><td><strong>10-54</strong></td><td>Animal involucrado</td><td>Animal involucrado</td></tr>
+        <tr><td><strong>10-55</strong></td><td>Conductor ebrio</td><td>Conductor ebrio</td></tr>
+        <tr><td><strong>10-56</strong></td><td>Suicidio / intento</td><td>Suicidio / intento</td></tr>
+        <tr><td><strong>10-57</strong></td><td>Sobredosis</td><td>Sobredosis</td></tr>
+        <tr><td><strong>10-58</strong></td><td>Paro cardíaco</td><td>Paro cardíaco</td></tr>
+        <tr><td><strong>10-59</strong></td><td>Reanimación en curso</td><td>Reanimación en curso</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🏥 Códigos Hospitalarios</h2>
+    <h3>Códigos de Emergencia</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Código</th><th>Descripción</th><th>Significado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Código Azul</strong></td><td>Observación / estado estable</td><td>Estado estable, monitoreo regular</td></tr>
+        <tr><td><strong>Código Verde</strong></td><td>Lesiones leves / paciente ambulatorio</td><td>Lesiones menores, puede esperar</td></tr>
+        <tr><td><strong>Código Amarillo</strong></td><td>Urgencia moderada</td><td>Requiere atención pero no inmediata</td></tr>
+        <tr><td><strong>Código Naranja</strong></td><td>Urgencia seria</td><td>Riesgo potencial, atención pronta</td></tr>
+        <tr><td><strong>Código Rojo</strong></td><td>Emergencia grave</td><td>Riesgo vital inmediato</td></tr>
+        <tr><td><strong>Código Negro</strong></td><td>Fallecido</td><td>Sin signos vitales, confirmado</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Códigos Especiales</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Código</th><th>Descripción</th><th>Significado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Código Blanco</strong></td><td>Paciente pediátrico</td><td>Paciente menor de edad</td></tr>
+        <tr><td><strong>Código Rosa</strong></td><td>Paciente neonatal</td><td>Recién nacido / neonato</td></tr>
+        <tr><td><strong>Código Gris</strong></td><td>Paciente agitado</td><td>Paciente alterado / agresivo</td></tr>
+        <tr><td><strong>Código Violeta</strong></td><td>Paciente psiquiátrico</td><td>Crisis de salud mental</td></tr>
+        <tr><td><strong>Código Marrón</strong></td><td>Contaminación biológica</td><td>Exposition a agente biológico</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Códigos de Situación Clínica</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Código</th><th>Descripción</th><th>Significado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Código Trauma</strong></td><td>Trauma grave</td><td>Accidente, politraumatismo</td></tr>
+        <tr><td><strong>Código Cardio</strong></td><td>Emergencia cardíaca</td><td>Infarto, arritmia severa</td></tr>
+        <tr><td><strong>Código Respiratorio</strong></td><td>Dificultad respiratoria</td><td>Falla respiratoria grave</td></tr>
+        <tr><td><strong>Código Ictus</strong></td><td>Sospecha de ACV</td><td>Accidente cerebrovascular</td></tr>
+        <tr><td><strong>Código Sepsis</strong></td><td>Infección sistémica</td><td>Infección grave sistémica</td></tr>
+        <tr><td><strong>Código Shock</strong></td><td>Paciente en shock</td><td>Shock hipovolémico/séptico</td></tr>
+        <tr><td><strong>Código UCI</strong></td><td>Cuidados intensivos</td><td>Requiere UCI</td></tr>
+        <tr><td><strong>Código Quirófano</strong></td><td>Cirugía urgente</td><td>Requiere intervención quirúrgica</td></tr>
+        <tr><td><strong>Código Traslado</strong></td><td>Preparación traslado</td><td>Listo para traslado</td></tr>
+        <tr><td><strong>Código Alta</strong></td><td>Alta médica</td><td>Paciente dado de alta</td></tr>
+        <tr><td><strong>Código Crítico</strong></td><td>Estado extremadamente grave</td><td>Estado crítico</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-box" style="border-color: #dc2626; background: #fef2f2;">
+      <h3>⚠️ Alertas Especiales</h3>
+      <ul>
+        <li><strong>CODE 3:</strong> Respuesta de emergencia (prioridad máxima)</li>
+        <li><strong>STROKE ALERT:</strong> Posible ACV, notificación inmediata al hospital</li>
+        <li><strong>TRAUMA ALERT:</strong> Trauma grave, notificar a trauma center</li>
+        <li><strong>STEMI ALERT:</strong> Infarto, preparar cateterismo</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 RevoRP - FiveM Roleplay Server | Versión v1.3</p>
+  </footer>
+</body>
+</html>
