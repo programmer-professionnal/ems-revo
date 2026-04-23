@@ -99,14 +99,16 @@
         <tr><th>Código</th><th>Estado</th><th>Descripción</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>10-0</strong></td><td>Disponibilidad</td><td>Unidad disponible para asignación</td></tr>
-        <tr><td><strong>10-1</strong></td><td>En Tránsito</td><td>Dirigiéndose al lugar de incidente</td></tr>
+        <tr><td><strong>10-0</strong></td><td>Recibido</td><td>Llamada recibida, en proceso de despacho</td></tr>
+        <tr><td><strong>10-1</strong></td><td>En Tránsito</td><td>Unidad dispatched, dirigiéndose al origen</td></tr>
         <tr><td><strong>10-2</strong></td><td>En Escena</td><td>Personal en el lugar del incidente</td></tr>
-        <tr><td><strong>10-3</strong></td><td>En Servicio</td><td>Atendiendo al paciente</td></tr>
-        <tr><td><strong>10-4</strong></td><td>Fuera de Servicio</td><td>No disponible, fuera de servicio</td></tr>
+        <tr><td><strong>10-3</strong></td><td>En Servicio</td><td>Atendiendo/resolviendo incidente</td></tr>
+        <tr><td><strong>10-4</strong></td><td>Disponible</td><td>Unidad libre, disponible para nueva asignación</td></tr>
         <tr><td><strong>10-5</strong></td><td>En Transporte</td><td>Transportando al paciente a centro médico</td></tr>
-        <tr><td><strong>10-6</strong></td><td>En Hospital</td><td>En destino, entregando paciente</td></tr>
-        <tr><td><strong>10-7</strong></td><td>Disponible/Hospital</td><td>Disponible en hospital, listo para nueva asignación</td></tr>
+        <tr><td><strong>10-6</strong></td><td>En Hospital</td><td>Llegado al destino, en proceso de entrega</td></tr>
+        <tr><td><strong>10-7</strong></td><td>Hospitalario</td><td>Unidad en área hospitalaria, factible para nuevo servicio</td></tr>
+        <tr><td><strong>10-8</strong></td><td>Fuera de Servicio</td><td>Unidad不可用, fuera de servicio</td></tr>
+        <tr><td><strong>10-9</strong></td><td>Fuera de Área</td><td>Unidad fuera de su sector de cobertura</td></tr>
       </tbody>
     </table>
 
@@ -116,10 +118,16 @@
         <tr><th>Código</th><th>Descripción</th><th>Acción Requerida</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>10-A</strong></td><td>Traslado Programado</td><td>Traslado no urgente programado</td></tr>
-        <tr><td><strong>10-B</strong></td><td>Traslado Urgente</td><td>Traslado que requiere atención rápida</td></tr>
-        <tr><td><strong>10-C</strong></td><td>UCI Móvil</td><td>Transporte de paciente crítico</td></tr>
-        <tr><td><strong>10-D</strong></td><td>Traslado Especial</td><td>Requiere equipo especializado</td></tr>
+        <tr><td><strong>10-A</strong></td><td>Aviso</td><td>Aviso simple al hospital</td></tr>
+        <tr><td><strong>10-B</strong></td><td>Traslado</td><td>Traslado programado hacia hospital</td></tr>
+        <tr><td><strong>10-C</strong></td><td>UCI Móvil</td><td>Paciente crítico requiring UCI during transport</td></tr>
+        <tr><td><strong>10-D</strong></td><td>Derivación</td><td>Derivación a otro centro específico</td></tr>
+        <tr><td><strong>10-E</strong></td><td>Emergencia</td><td>Emergencia crítica en curso</td></tr>
+        <tr><td><strong>10-F</strong></td><td>Falecido</td><td>Confirmación deceso en escena/transporte</td></tr>
+        <tr><td><strong>10-G</strong></td><td>Gynecología</td><td>Emergencia obstétrica/ginecológica</td></tr>
+        <tr><td><strong>10-P</strong></td><td>Paciente</td><td>Paciente dado de alta en escena</td></tr>
+        <tr><td><strong>10-R</strong></td><td>Rechazo</td><td>Paciente rechaza traslado</td></tr>
+        <tr><td><strong>10-T</strong></td><td>Traslado Especial</td><td>Requiere equipo o condiciones especiales</td></tr>
       </tbody>
     </table>
 
