@@ -26,7 +26,7 @@ const hierarchyData = [
     ]
   },
   {
-    rank: 'Sector Captain',
+    rank: 'Captain',
     name: 'Por Asignar',
     role: 'Capitán de Sector',
     responsibilities: [
@@ -37,9 +37,9 @@ const hierarchyData = [
     ]
   },
   {
-    rank: 'Lieutenant',
-    name: 'Por Asignar',
-    role: 'Teniente',
+    rank: 'Lieutenant (Supervisor)',
+    name: 'Lucas Vargas',
+    role: 'Supervisor de Turno',
     responsibilities: [
       'Supervisión de equipos de paramedics',
       'Control de calidad en llamadas',
@@ -50,14 +50,14 @@ const hierarchyData = [
 ]
 
 const staffData = [
-  { name: 'Dr. Sarah Mitchell', position: 'Medical Director', shift: '24/7' },
-  { name: 'Cpt. James Rodriguez', position: 'Sector 1 Captain', shift: 'Mañana' },
-  { name: 'Lt. Emily Chen', position: 'Sector 2 Lieutenant', shift: 'Tarde' },
-  { name: 'Sgt. Michael Brown', position: 'Training Sergeant', shift: 'Mañana' },
-  { name: 'Off. Jessica Taylor', position: 'Senior Paramedic', shift: 'Noche' },
-  { name: 'Off. David Wilson', position: 'Paramedic', shift: 'Tarde' },
-  { name: 'Off. Maria Garcia', position: 'Paramedic', shift: 'Mañana' },
-  { name: 'Off. Robert Kim', position: 'EMT-A', shift: 'Noche' }
+  { name: 'Lucas Vargas', position: 'Lieutenant - Supervisor', shift: '24/7', status: 'active' },
+  { name: 'Dr. Sarah Mitchell', position: 'Medical Director', shift: '24/7', status: 'active' },
+  { name: 'Cpt. James Rodriguez', position: 'Captain - Sector 1', shift: 'Mañana', status: 'active' },
+  { name: 'Lt. Emily Chen', position: 'Lieutenant - Sector 2', shift: 'Tarde', status: 'active' },
+  { name: 'Sgt. Michael Brown', position: 'Training Sergeant', shift: 'Mañana', status: 'active' },
+  { name: 'Off. Jessica Taylor', position: 'Senior Paramedic', shift: 'Noche', status: 'active' },
+  { name: 'Off. David Wilson', position: 'Paramedic', shift: 'Tarde', status: 'active' },
+  { name: 'Off. Maria Garcia', position: 'Paramedic', shift: 'Mañana', status: 'active' }
 ]
 
 const ranksData = [
@@ -150,13 +150,16 @@ export default function Staff() {
 
             <div className="staff-grid">
               {filteredStaff.map((staff, index) => (
-                <div key={index} className="staff-card">
+                <div key={index} className={`staff-card ${staff.name === 'Lucas Vargas' ? 'supervisor' : ''}`}>
                   <div className="staff-avatar">
                     {staff.name.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div className="name">{staff.name}</div>
                   <div className="position">{staff.position}</div>
                   <div className="shift">Turno: {staff.shift}</div>
+                  {staff.name === 'Lucas Vargas' && (
+                    <span className="supervisor-badge">SUPERVISOR</span>
+                  )}
                 </div>
               ))}
             </div>
